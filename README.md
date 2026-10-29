@@ -101,6 +101,7 @@ a secret scanner (the guard runs on this repository's own commits).
 
 ## Limitations
 
+- The author's own workspace runs 12 agents and 8 skills; this template keeps the 10 general-purpose agents and 6 skills and leaves out 2 agents and 2 skills written for a personal project.
 - Hooks are PowerShell and were developed on Windows; macOS/Linux need `pwsh` and the command change above.
 - Deny rules match command prefixes Claude Code sees; they do not stop a human, an alias, or a script that runs
   git internally.
