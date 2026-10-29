@@ -111,7 +111,6 @@ a secret scanner (the guard runs on this repository's own commits).
 - The hook JSON contract (`hookSpecificOutput`, exit code 2 = block) follows the Claude Code docs at the time
   of writing; the tests check the scripts' outputs, not a live Claude Code session.
 - The ASP.NET skills assume Minimal APIs, EF Core and xUnit.
-- CI has not run yet on GitHub; it was only parsed locally.
 
 ## How this was built
 
@@ -128,6 +127,7 @@ What was verified, and how:
   output, a syntax error returns the compiler errors. This also exposed a bug in the original hook (it read a
   stale exit code and reported a clean build as failed); fixed here.
 - **Settings and CI:** `settings.json` loads as JSON and every hook it wires exists (`tests/test_config.py`);
-  `ci.yml` parses as YAML. CI itself is unverified until the first push.
+  `ci.yml` parses as YAML, and its first GitHub Actions run passed on 29.10.2026 (guard and config tests on
+  Ubuntu and Windows, PowerShell hook tests on Windows).
 - **Content:** the repository and its git history were searched for personal paths, hostnames, tokens and
   private project names before publishing.
