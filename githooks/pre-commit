@@ -1,0 +1,8 @@
+#!/bin/sh
+# Pre-commit guard: secrets, files over 50 MB, conflict markers (logic in pre_commit_guard.py next to this file).
+# Install: git config core.hooksPath githooks   (or copy both files into .git/hooks/)
+# Without Python the guard does not run (the commit goes through), so it never blocks work.
+GUARD="$(dirname "$0")/pre_commit_guard.py"
+PY="$(command -v python || command -v python3)" || exit 0
+[ -f "$GUARD" ] || exit 0
+exec "$PY" "$GUARD"

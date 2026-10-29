@@ -1,0 +1,11 @@
+# Per-user Claude Code settings (may hold tokens)
+.claude/settings.local.json
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
